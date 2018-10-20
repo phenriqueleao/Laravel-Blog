@@ -11,6 +11,19 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('login');
 });
+Route::post('/login', 'LoginController@login');
+
+
+Route::get('/criar-conta', function () {
+    return view('criar-conta');
+});
+Route::post('/criar-conta', 'LoginController@create');
+
+Route::get('/', function () {
+    return view('posts');
+});
+
+
