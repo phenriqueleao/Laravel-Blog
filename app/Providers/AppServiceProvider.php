@@ -23,6 +23,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->bind('url', function() {
+            return new class extends UrlGeneratorOriginal
+            {
+                public function asset($path, $secure = null)
+                {
+                    return parent::asset("public/{$path}", $secure);
+                }
+            };
+        });
     }
 }
