@@ -133,6 +133,12 @@
                                         </div>
                                     </li>
                                 </ul>
+                                <br>
+                                <h1 style="font-size: 25px;">Adicione seu comentário</h1>
+                                <form action="" method="post">
+                                    <textarea class="textarea" name="text" placeholder="Escreva aqui o seu comentário"></textarea>
+                                    <button class="button is-success is-medium" type="submit" style="float: right;;margin-top: 10px;">Comentar</button>
+                                </form>
                             </div>
                         </div>
                     </div>
