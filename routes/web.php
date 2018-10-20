@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('artigos');
+});
 
 Route::get('/login', function () {
     return view('login');
@@ -22,8 +25,8 @@ Route::get('/criar-conta', function () {
 });
 Route::post('/criar-conta', 'LoginController@create');
 
-Route::get('/', function () {
-    return view('posts');
+Route::get('/artigo', function () {
+    return view('ver-artigo');
 });
 
 
