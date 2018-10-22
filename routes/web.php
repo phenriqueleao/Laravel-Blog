@@ -14,13 +14,16 @@ Route::get('/', function () {
     return view('artigos');
 });
 
-Route::get('/login', function () {
-    return 'login';
-});
+Route::get('/login', 'LoginController@showLogin');
+Route::post('/login', 'LoginController@login');
 
-Route::get('/criar-conta', function () {
-    return 'criar-conta';
-});
+
+
+Route::get('/criar-conta', 'RegisterController@showRegisterForm');
+Route::post('/criar-conta', 'RegisterController@createAccount');
+
+
+
 
 Route::get('/artigo', function () {
     return 'ver-artigo';
