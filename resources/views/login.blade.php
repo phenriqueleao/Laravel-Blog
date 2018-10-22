@@ -28,13 +28,13 @@
                             <form>
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input is-medium" type="email" placeholder="Seu email" autofocus="true">
+                                        <input class="input is-medium" type="email" name="email" placeholder="Seu email" autofocus="true">
                                     </div>
                                 </div>
 
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input is-medium" type="password" placeholder="Sua senha">
+                                        <input class="input is-medium" type="password" name="password" placeholder="Sua senha">
                                     </div>
                                 </div>
                                 <button class="button is-block is-info is-medium is-fullwidth">Entrar</button>

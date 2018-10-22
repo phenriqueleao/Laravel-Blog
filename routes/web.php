@@ -11,27 +11,21 @@
 |
 */
 Route::get('/', function () {
-    return view('artigos');
+    return 'artigos';
 });
 
 Route::get('/login', function () {
-    return view('login');
+    return 'login';
 });
 
 Route::get('/criar-conta', function () {
-    return view('criar-conta');
+    return 'criar-conta';
 });
 
 Route::get('/artigo', function () {
-    return view('ver-artigo');
+    return 'ver-artigo';
 });
 
 Route::get('/criar-artigo', function () {
-    return view('criar-artigo');
+    return 'criar-artigo';
 });
-
-Route::get('/criar-artigo', function () {
-    return view('criar-artigo');
-});
-
-
