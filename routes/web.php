@@ -11,7 +11,7 @@
 |
 */
 Route::get('/', function () {
-    return 'artigos';
+    return view('artigos');
 });
 
 Route::get('/login', function () {
@@ -22,10 +22,10 @@ Route::get('/criar-conta', function () {
     return 'criar-conta';
 });
 
-Route::get('/artigo', function () {
+Route::get('/post', function () {
     return 'ver-artigo';
 });
 
-Route::get('/criar-artigo', function () {
+Route::get('/criar-post', function () {
     return 'criar-artigo';
 });

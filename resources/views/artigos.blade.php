@@ -30,38 +30,22 @@
             </div>
             <div id="navbarMenu" class="navbar-menu">
                 <div class="navbar-end">
-                    <a class="navbar-item is-active">
+                    <a href="" class="navbar-item is-active">
                         Home
-                    </a>
-                    <a class="navbar-item">
-                        Examples
-                    </a>
-                    <a class="navbar-item">
-                        Features
-                    </a>
-                    <a class="navbar-item">
-                        Team
-                    </a>
-                    <a class="navbar-item">
-                        Archives
-                    </a>
-                    <a class="navbar-item">
-                        Help
-                    </a>
+                    </a>                 
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
                             Nome usuário
                         </a>
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                                Minhas postagens
-                            </a>
-                            <a class="navbar-item">
-                                Perfil
+                        <div class="navbar-dropdown">                            
+                            <a href="/criar-post" class="navbar-item">
+                                Criar post
                             </a>
                             <hr class="navbar-divider">
                             <div class="navbar-item">
-                                Logout
+                                <a href="/logout">
+                                    Logout
+                                </a>
                             </div>
                         </div>
                     </div>
