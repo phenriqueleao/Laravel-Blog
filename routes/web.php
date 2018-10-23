@@ -22,10 +22,10 @@ Route::get('/criar-conta', function () {
     return 'criar-conta';
 });
 
-Route::get('/post', function () {
+Route::get('/artigo', function () {
     return 'ver-artigo';
 });
 
-Route::get('/criar-post', function () {
+Route::get('/criar-artigo', function () {
     return 'criar-artigo';
 });

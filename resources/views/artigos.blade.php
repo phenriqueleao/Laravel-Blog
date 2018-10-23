@@ -38,8 +38,8 @@
                             Nome usuário
                         </a>
                         <div class="navbar-dropdown">                            
-                            <a href="/criar-post" class="navbar-item">
-                                Criar post
+                            <a href="/criar-artigo" class="navbar-item">
+                                Criar artigo
                             </a>
                             <hr class="navbar-divider">
                             <div class="navbar-item">
