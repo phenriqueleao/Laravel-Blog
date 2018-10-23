@@ -15,46 +15,9 @@
 </head>
 
 <body>
-    <!-- START NAV -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="/">
-                        <img src="{{asset('images/laravel-blog-logo.png')}}" alt="Logo">
-                    </a>
-                <span class="navbar-burger burger" data-target="navbarMenu">
-                        <span></span>
-                <span></span>
-                <span></span>
-                </span>
-            </div>
-            <div id="navbarMenu" class="navbar-menu">
-                <div class="navbar-end">
-                    <a href="" class="navbar-item is-active">
-                        Home
-                    </a>                 
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            Nome usuário
-                        </a>
-                        <div class="navbar-dropdown">                            
-                            <a href="/criar-artigo" class="navbar-item">
-                                Criar artigo
-                            </a>
-                            <hr class="navbar-divider">
-                            <div class="navbar-item">
-                                <a href="/logout">
-                                    Logout
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!-- END NAV -->
+<<<<<<< HEAD
 
+    @include('layouts.navbar')
     <div class="container" style="margin-top: 20rem;">
         <!-- START ARTICLE FEED -->
         <section class="articles">
@@ -67,9 +30,10 @@
                                 <img src="http://www.radfaces.com/images/avatars/daria-morgendorffer.jpg" class="author-image" alt="Placeholder image">
                             </div>
                             <div class="media-content has-text-centered">
+                                <img src="https://imagens-revista-pro.vivadecora.com.br/uploads/2018/04/como-criar-um-blog-head.jpg" width="300" height="300"/>
                                 <p class="title article-title"><a href="#" style="color: #363636;">Sapien eget mi proin sed</a></p>
                                 <p class="subtitle is-6 article-subtitle">
-                                    <a href="#">Fldariaávia</a> on February 17, 2018
+                                    <a>Fldariaávia</a> on February 17, 2018
                                 </p>
                             </div>
                         </div>
@@ -89,9 +53,10 @@
                                 <img src="http://www.radfaces.com/images/avatars/angela-chase.jpg" class="author-image" alt="Placeholder image">
                             </div>
                             <div class="media-content has-text-centered">
+                                <img src="https://imagens-revista-pro.vivadecora.com.br/uploads/2018/04/como-criar-um-blog-head.jpg" width="300" height="300"/>
                                 <p class="title article-title"><a href="#" style="color: #363636;">Cras tincidunt lobortis feugiat vivamus.</a></p>
                                 <p class="subtitle is-6 article-subtitle">
-                                    <a href="#">Angela</a> on October 7, 2017
+                                    <a>Angela</a> on October 7, 2017
                                 </p>
                             </div>
                         </div>

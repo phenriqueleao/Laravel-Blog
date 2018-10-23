@@ -15,61 +15,7 @@
 </head>
 
 <body>
-    <!-- START NAV -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="/">
-                        <img src="{{asset('images/laravel-blog-logo.png')}}" alt="Logo">
-                    </a>
-                <span class="navbar-burger burger" data-target="navbarMenu">
-                        <span></span>
-                <span></span>
-                <span></span>
-                </span>
-            </div>
-            <div id="navbarMenu" class="navbar-menu">
-                <div class="navbar-end">
-                    <a class="navbar-item is-active">
-                        Home
-                    </a>
-                    <a class="navbar-item">
-                        Examples
-                    </a>
-                    <a class="navbar-item">
-                        Features
-                    </a>
-                    <a class="navbar-item">
-                        Team
-                    </a>
-                    <a class="navbar-item">
-                        Archives
-                    </a>
-                    <a class="navbar-item">
-                        Help
-                    </a>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            Nome usuário
-                        </a>
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                                Minhas postagens
-                            </a>
-                            <a class="navbar-item">
-                                Perfil
-                            </a>
-                            <hr class="navbar-divider">
-                            <div class="navbar-item">
-                                Logout
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!-- END NAV -->
+    @include('layouts.navbar')
 
     <div style="margin-top: 20rem;">
         <!-- START ARTICLE FEED -->
@@ -77,12 +23,17 @@
             <div class="column is-8 is-offset-2">
                 <!-- START ARTICLE -->
                 <div class="card article">
+                    <div class="card-header" style="box-shadow:unset;padding: 10px;">
+                        <a href="/artigo/editar/" class="button" style="margin-right:10px;"><i class="fa fa-edit"></i></a>
+                        <a href="/artigo/remover/" class="button"><i class="fa fa-remove"></i></a>
+                    </div>
                     <div class="card-content">
                         <div class="media">
                             <div class="media-center">
                                 <img src="http://www.radfaces.com/images/avatars/angela-chase.jpg" class="author-image" alt="Placeholder image">
                             </div>
                             <div class="media-content has-text-centered">
+                                <img src="https://imagens-revista-pro.vivadecora.com.br/uploads/2018/04/como-criar-um-blog-head.jpg" width="600" height="600"/>
                                 <p class="title article-title">Cras tincidunt lobortis feugiat vivamus.</p>
                                 <p class="subtitle is-6 article-subtitle">
                                     <a href="#">Angela</a> on October 7, 2017
@@ -143,7 +94,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- END ARTICLE -->                
+                <!-- END ARTICLE -->
         </section>
         <!-- END ARTICLE FEED -->
     </div>
