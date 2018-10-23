@@ -15,8 +15,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-
     @include('layouts.navbar')
     <div class="container" style="margin-top: 20rem;">
         <!-- START ARTICLE FEED -->
