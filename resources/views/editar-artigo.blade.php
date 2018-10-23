@@ -75,7 +75,7 @@
         <section class="articles">
             <div class="column is-8 is-offset-2">
                 <div class="card">
-                    <h2 class="has-text-centered is-size-2">Crie seu artigo</h2>
+                    <h2 class="has-text-centered is-size-2">Edite seu artigo</h2>
                     @if($errors->any())
                         @foreach($errors->all() as $error)
                             <span style="color: red">{{ $error }}</span>
@@ -84,6 +84,7 @@
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="card-content">
                             <div class="content">
+                                <img src="{{ Storage::disk('public')->url($artigo->image_location) }}" width="600" height="600"/>   
                                 <div class="field">
                                     <div class="control">
                                         <label for="titulo">Imagem:</label>
@@ -107,13 +108,13 @@
                                 <div class="field">
                                     <div class="control">
                                         <label for="titulo">Título:</label>
-                                        <input class="input" type="text" name="title" value="{{old('title')}}" placeholder="Título do artigo">
+                                        <input class="input" type="text" name="title" value="{{old('title', $artigo->title)}}" placeholder="Título do artigo">
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="control">
                                         <label for="texto">Texto:</label>
-                                        <textarea class="textarea" id="texto" name="text" value="{{old('text')}}" placeholder="Escreva aqui o texto do seu artigo"></textarea>
+                                        <textarea class="textarea" id="texto" name="text" placeholder="Escreva aqui o texto do seu artigo">{{old('text', $artigo->text)}}</textarea>
                                     </div>
                                 </div>
                             </div>

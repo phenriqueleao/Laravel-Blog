@@ -31,24 +31,30 @@
             <div id="navbarMenu" class="navbar-menu">
                 <div class="navbar-end">
                     <a href="" class="navbar-item is-active">
-                        Home
-                    </a>                 
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            Nome usuário
-                        </a>
-                        <div class="navbar-dropdown">                            
-                            <a href="/criar-post" class="navbar-item">
-                                Criar post
+                        Todos artigos
+                    </a>
+                    @if (Auth::check())                 
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                                Nome usuário
                             </a>
-                            <hr class="navbar-divider">
-                            <div class="navbar-item">
-                                <a href="/logout">
-                                    Logout
+                            <div class="navbar-dropdown">                            
+                                <a href="/criar-artigo" class="navbar-item">
+                                    Criar artigo
                                 </a>
+                                <hr class="navbar-divider">
+                                <div class="navbar-item">
+                                    <a href="/logout">
+                                        Logout
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @else
+                        <a href="/login" class="navbar-item is-active">
+                            Acesse sua conta
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -56,31 +62,38 @@
     <!-- END NAV -->
 
     <div class="container" style="margin-top: 20rem;">
-        <!-- START ARTICLE FEED -->
-        <section class="articles">
-            <div class="column is-8 is-offset-2">                
-                <div class="card article">
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-center">
-                                <img src="http://www.radfaces.com/images/avatars/daria-morgendorffer.jpg" class="author-image" alt="Placeholder image">
+        <!-- START ARTICLE FEED -->        
+            <section class="articles">
+                @foreach($artigos as $artigo)
+                    <div class="column is-8 is-offset-2">                
+                        <div class="card article">
+                            @if ($artigo->author->id == Auth::id())
+                                <div class="card-header" style="box-shadow:unset;padding: 10px;">
+                                    <a href="/artigo/editar/{{$artigo->slug}}" class="button" style="margin-right:10px;"><i class="fa fa-edit"></i></a>
+                                    <a href="/artigo/remover/{{$artigo->slug}}" class="button"><i class="fa fa-remove"></i></a>
+                                </div>
+                            @endif
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-center">
+                                        <img src="http://www.radfaces.com/images/avatars/daria-morgendorffer.jpg" class="author-image" alt="Placeholder image">
+                                    </div>
+                                    <div class="media-content has-text-centered">
+                                        <img src="{{ Storage::disk('public')->url($artigo->image_location) }}" width="300" height="300"/>   
+                                        <p class="title article-title"><a href="/artigo/{{ $artigo->slug }}" style="color: #363636;">{{ $artigo->title }}</a></p>
+                                        <p class="subtitle is-6 article-subtitle">
+                                            <a>{{ $artigo->author->name }}</a> em {{ $artigo->created_at->format('d/m/Y') }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="content article-body">
+                                    <p>{{ $artigo->text }}</p>
+                                </div>
                             </div>
-                            <div class="media-content has-text-centered">
-                                <p class="title article-title"><a href="#" style="color: #363636;">Sapien eget mi proin sed</a></p>
-                                <p class="subtitle is-6 article-subtitle">
-                                    <a href="#">Fldariaávia</a> on February 17, 2018
-                                </p>
-                            </div>
-                        </div>
-                        <div class="content article-body">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan lacus vel facilisis volutpat est velit egestas. Sapien eget mi proin sed. Sit amet mattis vulputate enim...
-                            </p>
-                        </div>
+                        </div>           
                     </div>
-                </div>
-                             
-        </section>
+                @endforeach
+            </section>
         <!-- END ARTICLE FEED -->
     </div>
 </body>

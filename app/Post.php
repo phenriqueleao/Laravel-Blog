@@ -8,6 +8,13 @@ class Post extends Model
 {
     protected $table = 'posts';
     protected $primaryKey = 'id';
+    protected $fillable = [
+        'image_location',
+        'title',
+        'text',
+        'slug',
+        'author_id'
+    ];
 
     public function author()
     {

@@ -77,26 +77,27 @@
             <div class="column is-8 is-offset-2">
                 <!-- START ARTICLE -->
                 <div class="card article">
+                    @if ($artigo->author->id == Auth::id())
+                        <div class="card-header" style="box-shadow:unset;padding: 10px;">
+                            <a href="/artigo/editar/{{$artigo->slug}}"class="button" style="margin-right:10px;"><i class="fa fa-edit"></i></a>
+                            <a href="/artigo/remover/{{$artigo->slug}}" class="button"><i class="fa fa-remove"></i></a>
+                        </div>
+                    @endif
                     <div class="card-content">
                         <div class="media">
                             <div class="media-center">
                                 <img src="http://www.radfaces.com/images/avatars/angela-chase.jpg" class="author-image" alt="Placeholder image">
                             </div>
                             <div class="media-content has-text-centered">
-                                <p class="title article-title">Cras tincidunt lobortis feugiat vivamus.</p>
+                                <img src="{{ Storage::disk('public')->url($artigo->image_location) }}" width="600" height="600"/>   
+                                <p class="title article-title">{{$artigo->title}}</p>
                                 <p class="subtitle is-6 article-subtitle">
-                                    <a href="#">Angela</a> on October 7, 2017
+                                    <a href="#">{{$artigo->author->name}}</a> em {{ $artigo->created_at->format('d/m/Y') }}
                                 </p>
                             </div>
                         </div>
                         <div class="content article-body">
-                            <p>Non arcu risus quis varius quam quisque. Dictum varius duis at consectetur lorem. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper. </p>
-                            <p>Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit. Accumsan lacus vel facilisis volutpat. Non sodales neque sodales ut etiam.
-                                Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus.</p>
-                            <h3 class="has-text-centered">How to properly center tags in bulma?</h3>
-                            <p> Proper centering of tags in bulma is done with class: <pre>level-item</pre>
-                                Voluptat ut farmacium tellus in metus vulputate. Feugiat in fermentum posuere urna nec. Pharetra convallis posuere morbi leo urna molestie.
-                                Accumsan lacus vel facilisis volutpat est velit egestas. Fermentum leo vel orci porta. Faucibus interdum posuere lorem ipsum.</p>
+                            <p>{{ $artigo->text }}</p>
                         </div>
                         <div class="card-footer">
                             <div class="comments-container">

@@ -25,12 +25,18 @@ class LoginController extends Controller
         //Autenticar o usuário
 
         //tentativa de login
-        if (Auth::attempt($request->only('name', 'password'))) {
+        if (Auth::attempt($request->only('email', 'password'))) {
             //autenticado
-            return view('artigos');
+            return Redirect::to('/');
         } else {
             //credenciais invalidas
             return Redirect::back()->withErrors(['Credenciais inválidas']);
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return Redirect::to('/');
     }
 }

@@ -15,17 +15,21 @@ Route::get('/', 'PostsController@postList');
 Route::get('/login', 'LoginController@showLogin');
 Route::post('/login', 'LoginController@login');
 
+Route::get('/logout', 'LoginController@logout');
+
 
 
 Route::get('/criar-conta', 'RegisterController@showRegisterForm');
 Route::post('/criar-conta', 'RegisterController@createAccount');
 
 
+//pegar o post para ser editado
+Route::get('/artigo/editar/{postSlug}', 'PostsController@getPostEdit');
+Route::post('/artigo/editar/{postSlug}', 'PostsController@submitPostEdit');
 
+Route::get('/artigo/remover/{postSlug}', 'PostsController@removePost');
 
-Route::get('/artigo', function () {
-    return 'ver-artigo';
-});
+Route::get('/artigo/{postSlug}', 'PostsController@getPost');
 
 Route::get('/criar-artigo', 'PostsController@createPost');
 Route::post('/criar-artigo', 'PostsController@createPostSubmit');
