@@ -103,40 +103,29 @@
                             <div class="comments-container">
                                 <h1>Comentários</h1>
                                 <ul id="comments-list" class="comments-list">
-                                    <li>
-                                        <div class="comment-main-level">
-                                            <!-- Avatar -->
-                                            <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-                                            <!-- Conteúdo do comentário -->
-                                            <div class="comment-box">
-                                                <div class="comment-head">
-                                                    <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Angela</a></h6>
+                                    @if (count($artigo->comments) > 0)
+                                        @foreach ($artigo->comments as $comment)
+                                            <li>
+                                                <div class="comment-main-level">
+                                                    <!-- Avatar -->
+                                                    <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+                                                    <!-- Conteúdo do comentário -->
+                                                    <div class="comment-box">
+                                                        <div class="comment-head">
+                                                            <h6 class="comment-name @if($comment->user->id == $artigo->author->id) {{ 'by-author' }} @endif"><a href="http://creaticode.com/blog">{{$comment->user->name}}</a></h6>
+                                                        </div>
+                                                        <div class="comment-content">
+                                                            {{$comment->comment}}
+                                                        </div>  
+                                                    </div>
                                                 </div>
-                                                <div class="comment-content">
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="comment-main-level">
-                                            <!-- Avatar -->
-                                            <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-                                            <!-- Conteúdo do comentário -->
-                                            <div class="comment-box">
-                                                <div class="comment-head">
-                                                    <h6 class="comment-name"><a href="http://creaticode.com/blog">Carlos Vinicius</a></h6>
-                                                </div>
-                                                <div class="comment-content">
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+                                            </li>
+                                        @endforeach
+                                    @endif
                                 </ul>
                                 <br>
                                 <h1 style="font-size: 25px;">Adicione seu comentário</h1>
-                                <form action="" method="post">
+                                <form action="{{$artigo->slug}}/adicionar-comentario" method="post">
                                     <textarea class="textarea" name="text" placeholder="Escreva aqui o seu comentário"></textarea>
                                     <button class="button is-success is-medium" type="submit" style="float: right;;margin-top: 10px;">Comentar</button>
                                 </form>

@@ -31,5 +31,7 @@ Route::get('/artigo/remover/{postSlug}', 'PostsController@removePost');
 
 Route::get('/artigo/{postSlug}', 'PostsController@getPost');
 
+Route::post('/artigo/{postSlug}/adicionar-comentario', 'CommentsController@createCommentSubmit');
+
 Route::get('/criar-artigo', 'PostsController@createPost');
 Route::post('/criar-artigo', 'PostsController@createPostSubmit');
