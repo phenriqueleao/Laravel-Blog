@@ -33,38 +33,23 @@
                     <a class="navbar-item is-active">
                         Home
                     </a>
-                    <a class="navbar-item">
-                        Examples
-                    </a>
-                    <a class="navbar-item">
-                        Features
-                    </a>
-                    <a class="navbar-item">
-                        Team
-                    </a>
-                    <a class="navbar-item">
-                        Archives
-                    </a>
-                    <a class="navbar-item">
-                        Help
-                    </a>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
                             Nome usuário
                         </a>
                         <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                                Minhas postagens
-                            </a>
-                            <a class="navbar-item">
-                                Perfil
+                            <a href="criar-artigo" class="navbar-item">
+                                Criar artigo
                             </a>
                             <hr class="navbar-divider">
                             <div class="navbar-item">
-                                Logout
+                                <a href="/logout">Logout</a>
                             </div>
                         </div>
                     </div>
+                    <a href="/login" class="navbar-item is-active">
+                        Acesse sua conta
+                    </a>
                 </div>
             </div>
         </div>
@@ -76,7 +61,7 @@
             <div class="column is-8 is-offset-2">
                 <div class="card">
                     <h2 class="has-text-centered is-size-2">Crie seu artigo</h2>
-                    <form action="" method="post">
+                    <form action="" method="post" enctype="multipart/form-data">
                         <div class="card-content">
                             <div class="content">
                                 <div class="field">
@@ -118,12 +103,12 @@
                         </div>
                     </form>
                 </div>
-            </div>              
+            </div>
         </section>
     </div>
     <script>
         function pegarNomeArquivo(arquivoRecebido){
-            var arquivo = arquivoRecebido.files[0];  
+            var arquivo = arquivoRecebido.files[0];
             var nomeArquivo = arquivo.name;
             document.getElementById('file').innerText = nomeArquivo;
         }

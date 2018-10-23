@@ -32,14 +32,14 @@
                 <div class="navbar-end">
                     <a href="" class="navbar-item is-active">
                         Home
-                    </a>                 
+                    </a>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
                             Nome usuário
                         </a>
-                        <div class="navbar-dropdown">                            
-                            <a href="/criar-post" class="navbar-item">
-                                Criar post
+                        <div class="navbar-dropdown">
+                            <a href="/criar-artigo" class="navbar-item">
+                                Criar artigo
                             </a>
                             <hr class="navbar-divider">
                             <div class="navbar-item">
@@ -49,6 +49,9 @@
                             </div>
                         </div>
                     </div>
+                    <a href="/login" class="navbar-item is-active">
+                        Acesse sua conta
+                    </a>
                 </div>
             </div>
         </div>
@@ -67,9 +70,10 @@
                                 <img src="http://www.radfaces.com/images/avatars/daria-morgendorffer.jpg" class="author-image" alt="Placeholder image">
                             </div>
                             <div class="media-content has-text-centered">
+                                <img src="https://imagens-revista-pro.vivadecora.com.br/uploads/2018/04/como-criar-um-blog-head.jpg" width="300" height="300"/>
                                 <p class="title article-title"><a href="#" style="color: #363636;">Sapien eget mi proin sed</a></p>
                                 <p class="subtitle is-6 article-subtitle">
-                                    <a href="#">Fldariaávia</a> on February 17, 2018
+                                    <a>Fldariaávia</a> on February 17, 2018
                                 </p>
                             </div>
                         </div>
@@ -89,9 +93,10 @@
                                 <img src="http://www.radfaces.com/images/avatars/angela-chase.jpg" class="author-image" alt="Placeholder image">
                             </div>
                             <div class="media-content has-text-centered">
+                                <img src="https://imagens-revista-pro.vivadecora.com.br/uploads/2018/04/como-criar-um-blog-head.jpg" width="300" height="300"/>
                                 <p class="title article-title"><a href="#" style="color: #363636;">Cras tincidunt lobortis feugiat vivamus.</a></p>
                                 <p class="subtitle is-6 article-subtitle">
-                                    <a href="#">Angela</a> on October 7, 2017
+                                    <a>Angela</a> on October 7, 2017
                                 </p>
                             </div>
                         </div>
