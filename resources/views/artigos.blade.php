@@ -38,8 +38,8 @@
                             Nome usuário
                         </a>
                         <div class="navbar-dropdown">                            
-                            <a href="/criar-artigo" class="navbar-item">
-                                Criar artigo
+                            <a href="/criar-post" class="navbar-item">
+                                Criar post
                             </a>
                             <hr class="navbar-divider">
                             <div class="navbar-item">
@@ -58,8 +58,7 @@
     <div class="container" style="margin-top: 20rem;">
         <!-- START ARTICLE FEED -->
         <section class="articles">
-            <div class="column is-8 is-offset-2">
-                <!-- START ARTICLE -->
+            <div class="column is-8 is-offset-2">                
                 <div class="card article">
                     <div class="card-content">
                         <div class="media">
@@ -80,29 +79,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- END ARTICLE -->
-                <!-- START ARTICLE -->
-                <div class="card article">
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-center">
-                                <img src="http://www.radfaces.com/images/avatars/angela-chase.jpg" class="author-image" alt="Placeholder image">
-                            </div>
-                            <div class="media-content has-text-centered">
-                                <p class="title article-title"><a href="#" style="color: #363636;">Cras tincidunt lobortis feugiat vivamus.</a></p>
-                                <p class="subtitle is-6 article-subtitle">
-                                    <a href="#">Angela</a> on October 7, 2017
-                                </p>
-                            </div>
-                        </div>
-                        <div class="content article-body">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan lacus vel facilisis volutpat est velit egestas. Sapien eget mi proin sed. Sit amet mattis vulputate enim...
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- END ARTICLE -->
+                             
         </section>
         <!-- END ARTICLE FEED -->
     </div>
