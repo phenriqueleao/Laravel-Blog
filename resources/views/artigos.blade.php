@@ -29,16 +29,18 @@
                                     <img src="http://www.radfaces.com/images/avatars/daria-morgendorffer.jpg" class="author-image" alt="Placeholder image">
                                 </div>
                                 <div class="media-content has-text-centered">
-                                    <img src="{{ Storage::disk('public')->url($artigo->image_location) }}" width="300" height="300"/>
-                                    <p class="title article-title"><a href="#" style="color: #363636;">Sapien eget mi proin sed</a></p>
+                                    @if ($artigo->image_location)
+                                        <img src="{{ Storage::disk('public')->url($artigo->image_location) }}" width="300" height="300"/>
+                                    @endif
+                                    <p class="title article-title"><a href="#" style="color: #363636;">{{$artigo->title}}</a></p>
                                     <p class="subtitle is-6 article-subtitle">
-                                        <a>Fldariaávia</a> on February 17, 2018
+                                        <a>{{ $artigo->author->name }}</a> em {{$artigo->created_at->format('d/m/Y')}}
                                     </p>
                                 </div>
                             </div>
                             <div class="content article-body">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan lacus vel facilisis volutpat est velit egestas. Sapien eget mi proin sed. Sit amet mattis vulputate enim...
+                                    {{$artigo->text}}
                                 </p>
                             </div>
                         </div>

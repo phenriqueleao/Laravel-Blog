@@ -35,8 +35,11 @@ class PostsController extends Controller
         ])->validate();
 
         //salvando a imagem no servidor e retornando o caminho
-        $imagePath = Storage::disk('public')->put(
-            '/posts-images', $request->file('image'));
+        $imagePath = '';
+        if ($request->file('image')){
+            $imagePath = Storage::disk('public')->put(
+                '/posts-images', $request->file('image'));
+        }
 
         $postCreated = Post::create([
             'title' => $request->get('title'),
