@@ -21,6 +21,11 @@
             <div class="column is-8 is-offset-2">
                 <div class="card">
                     <h2 class="has-text-centered is-size-2">Crie seu artigo</h2>
+                    @if($errors->any())
+                        @foreach($errors->all() as $error)
+                            <span style="color: red;">{{ $error }}</span>
+                        @endforeach
+                    @endif
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="card-content">
                             <div class="content">

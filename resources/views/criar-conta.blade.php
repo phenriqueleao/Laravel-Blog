@@ -25,7 +25,12 @@
                                 <img width="128" height="128" src="{{asset('images/laravel-blog-logo.png')}}">
                             </figure>
                             <br>
-                            <form>
+                            @if($errors->any())
+                                @foreach($errors->all() as $error)
+                                    <span style="color: red;">{{ $error }}</span>
+                                @endforeach
+                            @endif
+                            <form method="post">
                                 <div class="field">
                                     <div class="control">
                                         <input class="input is-medium" type="text" name="name" placeholder="Seu nome" autofocus="true">
@@ -36,15 +41,9 @@
                                         <input class="input is-medium" type="email" name="email" placeholder="Seu email" autofocus="true">
                                     </div>
                                 </div>
-
                                 <div class="field">
                                     <div class="control">
                                         <input class="input is-medium" type="password" name="password" placeholder="Sua senha">
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <div class="control">
-                                        <input class="input is-medium" type="password" placeholder="Confirmação de senha">
                                     </div>
                                 </div>
                                 <button class="button is-block is-info is-medium is-fullwidth">Entrar</button>

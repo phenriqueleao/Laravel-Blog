@@ -16,23 +16,26 @@
                 <a class="navbar-item is-active">
                     Home
                 </a>
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        Nome usuário
-                    </a>
-                    <div class="navbar-dropdown">
-                        <a href="criar-artigo" class="navbar-item">
-                            Criar artigo
+                @if (Auth::check())
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            {{ Auth::User()->name }}
                         </a>
-                        <hr class="navbar-divider">
-                        <div class="navbar-item">
-                            <a href="/logout">Logout</a>
+                        <div class="navbar-dropdown">
+                            <a href="criar-artigo" class="navbar-item">
+                                Criar artigo
+                            </a>
+                            <hr class="navbar-divider">
+                            <div class="navbar-item">
+                                <a href="/logout">Logout</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <a href="/login" class="navbar-item is-active">
-                    Acesse sua conta
-                </a>
+                @else
+                    <a href="/login" class="navbar-item is-active">
+                        Acesse sua conta
+                    </a>
+                @endif
             </div>
         </div>
     </div>

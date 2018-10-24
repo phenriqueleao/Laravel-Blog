@@ -14,16 +14,25 @@ Route::get('/', function () {
     return view('artigos');
 });
 
+//acesso a tela de login
 Route::get('/login', 'LoginController@showLogin');
 
-Route::get('/criar-conta', function () {
-    return 'criar-conta';
-});
+//enviar os dados do formulario
+Route::post('/login', 'LoginController@submitLogin');
+
+//logout
+Route::get('/logout', 'LoginController@logout');
+
+//mostrar pagina de criação de conta
+Route::get('/criar-conta', 'RegisterController@showRegister');
+
+//enviar os dados do usuário
+Route::post('/criar-conta', 'RegisterController@createAccount');
 
 Route::get('/artigo', function () {
     return 'ver-artigo';
 });
 
-Route::get('/criar-artigo', function () {
-    return 'criar-artigo';
-});
+Route::get('/criar-artigo', 'PostsController@createPost');
+
+Route::post('/criar-artigo', 'PostsController@postSubmit');
