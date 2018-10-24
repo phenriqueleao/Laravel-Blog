@@ -14,9 +14,7 @@ Route::get('/', function () {
     return view('artigos');
 });
 
-Route::get('/login', function () {
-    return 'login';
-});
+Route::get('/login', 'LoginController@showLogin');
 
 Route::get('/criar-conta', function () {
     return 'criar-conta';
