@@ -13,7 +13,7 @@
         </div>
         <div id="navbarMenu" class="navbar-menu">
             <div class="navbar-end">
-                <a class="navbar-item is-active">
+                <a href="/" class="navbar-item is-active">
                     Home
                 </a>
                 @if (Auth::check())

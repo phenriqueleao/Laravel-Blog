@@ -32,9 +32,9 @@
                                     @if ($artigo->image_location)
                                         <img src="{{ Storage::disk('public')->url($artigo->image_location) }}" width="300" height="300"/>
                                     @endif
-                                    <p class="title article-title"><a href="#" style="color: #363636;">{{$artigo->title}}</a></p>
+                                    <p class="title article-title"><a href="/artigo/{{ $artigo->slug }}" style="color: #363636;">{{$artigo->title}}</a></p>
                                     <p class="subtitle is-6 article-subtitle">
-                                        <a>{{ $artigo->author->name }}</a> em {{$artigo->created_at->format('d/m/Y')}}
+                                        <a >{{ $artigo->author->name }}</a> em {{$artigo->created_at->format('d/m/Y')}}
                                     </p>
                                 </div>
                             </div>
